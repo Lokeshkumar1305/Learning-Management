@@ -18,12 +18,14 @@
         margin-left:70px;
         width:350px;
     }    
-    .input-icons i {
+    .icons  {
         position:absolute;
         margin-left:20px;
-         margin-top:9px;
+         margin-top:10px;
         font-size:18px; 
-        
+        margin-bottom:11px;
+    
+    
     
     } 
     /* .input-icons {
@@ -40,13 +42,28 @@
         border-radius: 1.5rem;
        /* text-align: center; */
        text-indent: 45px;
+       .eye{
+        position: absolute;
+        margin-left:315px;
+        margin-top:10px;
+    }
 
     }
-    /* .card{
+    /* .card{.eye{
+        position: absolute;
+        margin-left:315px;
+        margin-top:10px;
+    }
+
         margin-top:8px;
         padding-top:10px;
     } */
   
 .inval{
     color:red;
+}
+.eye{
+    position: absolute;
+    margin-left:315px;
+    margin-top:10px;
 }

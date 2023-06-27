@@ -15,7 +15,7 @@
                   <div class="forms">
                     <div class="input-icons">
                   <div class="form-group">
-                    <i class="bi bi-person"></i>
+                    <i class="bi bi-person icons"></i>
                     <input type="text" class="form-control" formControlName="firstName" placeholder="First Name" value="" />
                     <div *ngIf="regForm.controls['firstName'].touched && regForm.controls['firstName']?.['errors']" class="inval">
                       <div *ngIf="regForm.controls['firstName']?.['errors']?.['required']">
@@ -27,7 +27,7 @@
                       </div>
                     </div>
                 <div class="form-group">
-                    <i class="bi bi-person"></i>
+                    <i class="bi bi-person icons"></i>
                     <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name" value="" />
                       <div *ngIf="regForm.controls['lastName'].touched && regForm.controls['lastName']?.['errors']" class="inval">
                         <div *ngIf="regForm.controls['lastName']?.['errors']?.['required']">
@@ -39,32 +39,34 @@
                         </div>
                 </div>
                 <div class="form-group">
-                    <i class="bi bi-envelope"></i>
+                    <i class="bi bi-envelope icons"></i>
                     <input type="email" class="form-control" formControlName="email" placeholder="Your Email" value="" />
                       <div *ngIf="regForm.controls['email'].touched && regForm.controls['email']?.['errors']" class="inval">
                         <div *ngIf="regForm.controls['email']?.['errors']?.['required']">
                              * email is required
                         </div>
                         <div *ngIf="regForm.controls['email']?.['errors']?.['email']">
-                              * enter valid email
+                              * please enter valid email
                        </div>
                         </div>
                 </div>
                 <div class="form-group">
-                    <i class="bi bi-telephone"></i>
+                    <i class="bi bi-telephone icons"></i>
                     <input type="phonenumber" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="phoneNumber" placeholder="Your Phone" value="" />
                       <div *ngIf="regForm.controls['phoneNumber'].touched && regForm.controls['phoneNumber']?.['errors']" class="inval">
                         <div *ngIf="regForm.controls['phoneNumber']?.['errors']?.['required']">
                              * phone number is required
                         </div>
                         <div *ngIf="regForm.controls['phoneNumber']?.['errors']?.['pattern']">
-                              * enter 10 digit mobile number
+                              * please enter mobile number
                        </div>
                         </div>
                 </div>
                 <div class="form-group">
-                    <i class="bi bi-key"></i>
-                    <input type="password" class="form-control" formControlName="password" placeholder="Password" value="" />
+                  <i (click)="toggleshow()" class="bi bi-eye-slash eye" *ngIf="!showpassword"></i>
+                  <i (click)="toggleshow()" class="bi bi-eye  eye" *ngIf="showpassword" ></i>
+                    <i class="bi bi-key icons"></i>
+                    <input [type]="showpassword ? 'text':'password'" title="Password must be 8 characters including 1 uppercase letter,1 lowercase letter and numeric characters" class="form-control" formControlName="password" placeholder="Password" value="" />
                       <div *ngIf="regForm.controls['password'].touched && regForm.controls['password']?.['errors']" class="inval">
                         <div *ngIf="regForm.controls['password']?.['errors']?.['required']">
                              * password is required
@@ -75,8 +77,10 @@
                         </div>  
                 </div>
                 <div class="form-group">
-                    <i class="bi bi-key"></i>
-                    <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password" value="" />
+                  <i (click)="toggleshow1()" class="bi bi-eye-slash eye" *ngIf="!showpassword1"></i>
+                  <i (click)="toggleshow1()" class="bi bi-eye  eye" *ngIf="showpassword1" ></i>
+                    <i class="bi bi-key icons"></i>
+                    <input [type]="showpassword1 ? 'text':'password'" title="Password must be 8 characters including 1 uppercase letter,1 lowercase letter and numeric characters" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password" value="" />
                     
                       <div *ngIf="regForm.controls['confirmPassword']?.['touched']" class="inval">
                         <div *ngIf="regForm.controls['confirmPassword']?.['errors']?.['required']">
@@ -91,7 +95,7 @@
                         </div> 
                 </div>
               <div class="form-group" formControlName="subject">
-                <i class="bi bi-book"></i>
+                <i class="bi bi-book icons"></i>
                     <select class="form-control">
                         <option class="hidden"  selected disabled >Please select your subject</option>
                         <option>Angular</option>

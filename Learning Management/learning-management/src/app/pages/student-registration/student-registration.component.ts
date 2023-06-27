@@ -35,6 +35,15 @@ export class StudentRegistrationComponent  {
        }
      }
 
+     showpassword = false; 
+     toggleshow(){
+      this.showpassword=!this.showpassword
+     }
+    showpassword1= false;
+    toggleshow1(){
+    this.showpassword1 = !this.showpassword1
+   }
+
   show(){
     console.log(this.regForm)
   }
